@@ -78,6 +78,13 @@ private val exclusive = tastyTreats.copy(
     name = "Only on Jetsnack"
 )
 
+private val airportTreats = SnackCollection(
+    id = 2L,
+    name = "Airport Treats",
+    type = CollectionType.Normal,
+    snacks = snacks.filter { it.name.contains("Airport") }
+)
+
 private val also = tastyTreats.copy(
     id = Random.nextLong(),
     name = "Customers also bought"
@@ -93,7 +100,8 @@ private val snackCollections = listOf(
     popular,
     wfhFavs,
     newlyAdded,
-    exclusive
+    exclusive,
+    airportTreats
 )
 
 private val related = listOf(

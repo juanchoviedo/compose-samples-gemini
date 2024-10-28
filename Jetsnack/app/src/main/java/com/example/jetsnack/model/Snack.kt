@@ -228,10 +228,11 @@ val snacks = listOf(
         price = 299
     ),
     Snack(
-        id = Random.nextLong(),
+        id = 2L,
         name = "Airport Coffee",
         tagline = "A tag line",
         imageRes = R.drawable.airport_coffee,
-        price = 299
+        price = 299,
+        tags = setOf("Airport", "Coffee")
     )
 )
