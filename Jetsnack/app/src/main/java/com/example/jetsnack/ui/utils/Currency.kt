@@ -19,8 +19,32 @@ package com.example.jetsnack.ui.utils
 import java.math.BigDecimal
 import java.text.NumberFormat
 
+/**
+ * Helper function for formatting prices. [price] should be a non-negative value in cents.
+ */
 fun formatPrice(price: Long): String {
+    if (price < 0) {
+        throw IllegalArgumentException("Price must be non-negative")
+    }
     return NumberFormat.getCurrencyInstance().format(
         BigDecimal(price).movePointLeft(2)
     )
+}
+
+/**
+ * Enum class for supported currencies
+ */
+enum class Currency (val currencyName: String, val currencySymbol: String) {
+    CAD("US Dollar", "$"),
+    EUR("Euro", "€"),
+    GBP("Great Britain Pound", "£"),
+    USD("Canadian Dollar", "$")
+}
+
+/**
+ * Helper function for formatting prices.
+ * @param price Price in cents
+ */
+fun Currency.toString(price: Long): String {
+    return currencySymbol + formatPrice(price)
 }

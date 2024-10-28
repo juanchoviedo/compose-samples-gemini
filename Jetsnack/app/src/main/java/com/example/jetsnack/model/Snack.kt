@@ -226,5 +226,12 @@ val snacks = listOf(
         tagline = "A tag line",
         imageRes = R.drawable.mango,
         price = 299
+    ),
+    Snack(
+        id = Random.nextLong(),
+        name = "Airport Coffee",
+        tagline = "A tag line",
+        imageRes = R.drawable.airport_coffee,
+        price = 299
     )
 )
